@@ -1,0 +1,80 @@
+Sample output, cuda-matrix-multiply.cu, win64 release
+=====================================================
+
+Success simple GPU and CPU matrix multiplication match
+Success shared memory GPU and CPU matrix multiplication match
+CPU time 204 milliseconds
+Simple GPU time 531 milliseconds
+Shared GPU time 15 milliseconds
+Overhead time 0 milliseconds
+
+Repeating with more loops, to improve timing accuracy
+Success simple GPU and CPU matrix multiplication match
+Success shared memory GPU and CPU matrix multiplication match
+CPU time 207.25 milliseconds (per iteration, 4 iterations, 829 ms total)
+Simple GPU time 19.50 milliseconds (per iteration, 4 iterations, 78 ms total)
+Shared GPU time 11.75 milliseconds (per iteration, 4 iterations, 47 ms total)
+Overhead time 0.00 milliseconds (per iteration, 4 iterations, 0 ms total)
+
+Repeating with more loops, to improve timing accuracy
+Success simple GPU and CPU matrix multiplication match
+Success shared memory GPU and CPU matrix multiplication match
+CPU time 209.00 milliseconds (per iteration, 16 iterations, 3344 ms total)
+Simple GPU time 17.56 milliseconds (per iteration, 16 iterations, 281 ms total)
+Shared GPU time 8.81 milliseconds (per iteration, 16 iterations, 141 ms total)
+Overhead time 2.94 milliseconds (per iteration, 16 iterations, 47 ms total)
+
+Repeating with more loops, to improve timing accuracy
+Success simple GPU and CPU matrix multiplication match
+Success shared memory GPU and CPU matrix multiplication match
+Simple GPU time 17.08 milliseconds (per iteration, 64 iterations, 1093 ms total)
+
+Shared GPU time 8.55 milliseconds (per iteration, 64 iterations, 547 ms total)
+Overhead time 2.69 milliseconds (per iteration, 64 iterations, 172 ms total)
+
+Repeating with more loops, to improve timing accuracy
+Success shared memory GPU and CPU matrix multiplication match
+Shared GPU time 8.55 milliseconds (per iteration, 256 iterations, 2188 ms total)
+
+Overhead time 2.56 milliseconds (per iteration, 256 iterations, 656 ms total)
+
+Repeating with more loops, to improve timing accuracy
+Overhead time 2.53 milliseconds (per iteration, 1024 iterations, 2594 ms total)
+
+Timing summary:
+Naive CPU calculation time 209.00 milliseconds
+Simple GPU time 17.08 milliseconds
+Simple GPU time minus host<->device overhead 14.54 milliseconds
+Shared GPU time 8.55 milliseconds
+Shared GPU time minus host<->device overhead 6.01 milliseconds
+
+Matrix A (all matrices top left 4x4 portion only):
+0.000000 1.000000 2.000000 3.000000
+1.000000 2.000000 3.000000 4.000000
+2.000000 3.000000 4.000000 5.000000
+3.000000 4.000000 5.000000 6.000000
+
+Matrix B:
+0.000000 1.000000 2.000000 3.000000
+1.000000 2.000000 3.000000 4.000000
+2.000000 3.000000 4.000000 5.000000
+3.000000 4.000000 5.000000 6.000000
+
+Matrix C = A*B (CPU):
+44608184.000000 44739072.000000 44869960.000000 45000704.000000
+44739072.000000 44870328.000000 45001728.000000 45133128.000000
+44869960.000000 45001728.000000 45133496.000000 45265408.000000
+45000704.000000 45133128.000000 45265408.000000 45397688.000000
+
+Matrix D = A*B (GPU, simple):
+44608184.000000 44739072.000000 44869960.000000 45000704.000000
+44739072.000000 44870328.000000 45001728.000000 45133128.000000
+44869960.000000 45001728.000000 45133496.000000 45265408.000000
+45000704.000000 45133128.000000 45265408.000000 45397688.000000
+
+Matrix E = A*B (GPU, shared memory):
+44608184.000000 44739072.000000 44869960.000000 45000704.000000
+44739072.000000 44870328.000000 45001728.000000 45133128.000000
+44869960.000000 45001728.000000 45133496.000000 45265408.000000
+45000704.000000 45133128.000000 45265408.000000 45397688.000000
+

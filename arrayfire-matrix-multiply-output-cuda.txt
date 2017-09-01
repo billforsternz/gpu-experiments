@@ -1,0 +1,37 @@
+Sample output, arrayfire-matrix-multiply.cpp, win64 release, CUDA backend
+=========================================================================
+
+ArrayFire v3.5.0 (CUDA, 64-bit Windows, build 05999f3)
+Platform: CUDA Toolkit 8, Driver: CUDA Driver Version: 8000
+[0] GeForce GT 740M, 2048 MB, CUDA Compute 3.5
+Initialising array fire timing test
+size of M(512,512) = 1048576 bytes, 4.000000 bytes per element
+Arrayfire native GPU timing 1.14 millisecs
+Verify that array fire does the matrix multiply correctly once
+element[0][0] = 44608184.000000 (calc), 44608184.000000 (ref)
+element[DIM-1][DIM-1] = 311995968.000000 (calc), 311995968.000000 (ref)
+Verify successful
+CPU time 203 milliseconds
+GPU time 0 milliseconds
+
+Repeating with more loops, to improve timing accuracy
+CPU time 211.00 milliseconds (per iteration, 4 iterations, 844 ms total)
+GPU time 0.00 milliseconds (per iteration, 4 iterations, 0 ms total)
+
+Repeating with more loops, to improve timing accuracy
+CPU time 207.00 milliseconds (per iteration, 16 iterations, 3312 ms total)
+GPU time 0.00 milliseconds (per iteration, 16 iterations, 0 ms total)
+
+Repeating with more loops, to improve timing accuracy
+GPU time 0.00 milliseconds (per iteration, 64 iterations, 0 ms total)
+
+Repeating with more loops, to improve timing accuracy
+GPU time 0.13 milliseconds (per iteration, 256 iterations, 32 ms total)
+
+Repeating with more loops, to improve timing accuracy
+GPU time 0.99 milliseconds (per iteration, 1024 iterations, 1015 ms total)
+
+Timing summary:
+Naive CPU time 207.00 milliseconds
+Arrayfire GPU time 0.99 milliseconds
+For comparison, arrayfire GPU time using arrayfire hi-res timer 1.14 millisecs

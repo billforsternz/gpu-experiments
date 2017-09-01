@@ -1,0 +1,33 @@
+Sample output, arrayfire-matrix-multiply.cpp, win64 release, CPU backend
+========================================================================
+
+ArrayFire v3.5.0 (CPU, 64-bit Windows, build 05999f3)
+[0] Intel: Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz, 8081 MB, Max threads(4)
+Initialising array fire timing test
+size of M(512,512) = 1048576 bytes, 4.000000 bytes per element
+Arrayfire native GPU timing 4.42 millisecs
+Verify that array fire does the matrix multiply correctly once
+element[0][0] = 44608204.000000 (calc), 44608184.000000 (ref)
+element[DIM-1][DIM-1] = 311995904.000000 (calc), 311995968.000000 (ref)
+Verify successful
+CPU time 234 milliseconds
+GPU time 0 milliseconds
+
+Repeating with more loops, to improve timing accuracy
+CPU time 214.75 milliseconds (per iteration, 4 iterations, 859 ms total)
+GPU time 0.00 milliseconds (per iteration, 4 iterations, 0 ms total)
+
+Repeating with more loops, to improve timing accuracy
+CPU time 210.94 milliseconds (per iteration, 16 iterations, 3375 ms total)
+GPU time 0.00 milliseconds (per iteration, 16 iterations, 0 ms total)
+
+Repeating with more loops, to improve timing accuracy
+GPU time 4.41 milliseconds (per iteration, 64 iterations, 282 ms total)
+
+Repeating with more loops, to improve timing accuracy
+GPU time 4.21 milliseconds (per iteration, 256 iterations, 1078 ms total)
+
+Timing summary:
+Naive CPU time 210.94 milliseconds
+Arrayfire GPU time 4.21 milliseconds
+For comparison, arrayfire GPU time using arrayfire hi-res timer 4.42 millisecs
