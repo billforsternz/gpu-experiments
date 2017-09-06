@@ -101,7 +101,7 @@ bool af_test_verify( Matrix &reference )
                                 // Note that I've changed the demand for relative error
                                 // to be better than 1e-5 when previously I had 1e-9. This
                                 // was necessary to get a successful verification on the CPU
-                                // backend. This requires further study. See *NB* for more.
+                                // backend. See *NB* for explanation.
             if( !ok )
                 printf( "Verify error: element[%d][%d], value1=%f, value2=%f, delta=%f\n", row, col, value1, value2, delta );
             if( row==0 && col==0 )
@@ -116,9 +116,12 @@ bool af_test_verify( Matrix &reference )
     But on the CPU backend we get
         element[0][0] = 44608204.000000 (calc), 44608184.000000 (ref)
         element[DIM-1][DIM-1] = 311995904.000000 (calc), 311995968.000000 (ref)
-    As discussed above, this was the motivation for reducing the relative error
-    acceptance threshold. For further study, I suspect either an out and out bug
-    in Arrayfire, or perhaps reduced precision in the CPU backend for some reason.
+    What's going on here is that 32 bit floats have insufficient precision for
+    getting this calculation exactly right, and in fact both backends are getting
+    a (slightly) wrong answer. Integer arithmetic would give us the right numbers;
+        element[0][0]         =  44608256
+        element[DIM-1][DIM-1] = 311996160
+    There's a little more discussion in README.md
 */
         }
     }
