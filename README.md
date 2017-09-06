@@ -1,6 +1,6 @@
-#Getting Started with General Purpose GPU Computing using Some Simple Experiments
+# Getting Started with General Purpose GPU Computing using Some Simple Experiments
            
-#Introduction
+# Introduction
 
 This is some simple experimental GPU matrix multiplication code, using
 raw CUDA coding and arrayfire approaches. The repository includes code,
@@ -11,7 +11,7 @@ exposure to GPU programming. Reproducing and understanding the
 experiments here might serve as a reasonable first step for someone else
 (which is one reason for publishing this on GitHub).
 
-#Program Descriptions
+# Program Descriptions
 
 Program arrayfire-matrix-multiply.cpp demonstrates matrix multiplication
 using the Arrayfire GPU programming library.
@@ -243,7 +243,7 @@ Arrayfire prerequisites (basically the NVidia toolkit presumably to, allow
 use of the UNIFIED backend to dynamically switch between CUDA and CPU according
 to the presence or absence of NVidia GPU hardware).
 
-#Next Steps
+# Next Steps
 
 If I develop this project further my next two steps would be;
 
